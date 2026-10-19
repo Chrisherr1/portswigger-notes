@@ -1,0 +1,86 @@
+# Web Cache Deception — delimiter testing wordlist
+# Source: PortSwigger (https://portswigger.net/web-security/web-cache-deception/wcd-lab-delimiter-list)
+# Plus non-printable control characters from lesson 7 (Delimiter Decoding Discrepancies)
+#
+# Usage notes:
+# - Turn OFF automatic URL/character encoding in your tool (e.g. Burp Repeater/Intruder)
+
+#   before testing this list — you need the raw and encoded forms sent exactly as written.
+
+# - Test against the target endpoint as: /path<char>aaa  and  /path<char>aaa.<ext>
+
+#   trying a range of extensions (.css, .ico, .js, .exe, etc.) per lesson 4.
+
+## Raw (literal) printable characters
+!
+"
+#
+$
+%
+&
+'
+(
+)
+*
++
+,
+-
+.
+/
+:
+;
+<
+=
+>
+?
+@
+[
+\
+]
+^
+_
+`
+{
+|
+}
+~
+
+## URL-encoded printable characters
+%21
+%22
+%23
+%24
+%25
+%26
+%27
+%28
+%29
+%2A
+%2B
+%2C
+%2D
+%2E
+%2F
+%3A
+%3B
+%3C
+%3D
+%3E
+%3F
+%40
+%5B
+%5C
+%5D
+%5E
+%5F
+%60
+%7B
+%7C
+%7D
+%7E
+
+## Non-printable control characters (not in the official list — add manually)
+# These test decoder/parser-level truncation rather than framework routing quirks.
+%00
+%0A
+%09
