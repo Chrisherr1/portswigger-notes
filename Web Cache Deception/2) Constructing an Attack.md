@@ -34,6 +34,18 @@ To do this, once you've installed the extension, click on the top-level **Param 
 
 Burp now adds a unique query string to every request that you make. You can view the added query strings in the **Logger** tab.
 
+> **⚠️ Turn the cachebuster OFF when you're testing the cache itself.**
+>
+> The cachebuster exists to force a fresh trip to the **origin server** — it gives every request a unique cache key, so the cache can never hand you a stale copy while you're studying how the origin parses a path. That's exactly what you want when fingerprinting the origin.
+>
+> But confirming that a URL actually gets **cached** works the opposite way: you send the *same* URL twice and watch for `X-Cache: miss` → `X-Cache: hit`. If the cachebuster is still on, each request has a different key, you'll see `miss` → `miss`, and you'll wrongly conclude nothing is being cached — hiding the exact behaviour you were trying to catch.
+>
+> **Rule of thumb:**
+> - Studying the **origin** (does it truncate/ignore my junk?) → cachebuster **ON**.
+> - Studying the **cache** (does this exact URL get stored?) → cachebuster **OFF**.
+>
+> *Analogy: the cachebuster forces the receptionist (cache) to walk back to the kitchen (origin) so you can study the kitchen. Switch it off when you want to catch the receptionist saving things — because catching her requires asking the same question twice.*
+
 ---
 
 ## Detecting Cached Responses
