@@ -34,10 +34,46 @@ In the intercept tab of burp proxy,ensure that interception is turned on for web
 You can replay individual message and generate new messages on *Repeater*.
 
     1. Select a websocket message from the proxy history and send it to repeater.
+
     2. From here you can edit the message end send it in either direction, client or server.
+
     3. You can view the history of messages that have been transmitted over the WebSocket connection via burp repeater via the History panel.
 
 > *Note to self, I found the websocket history inside proxy.
 
 
 ## 3. Manipulating..
+
+You can also manipulate WebSocket messages, Sometimes *NECESSARY* to manipulate the webSocket handshake that establishes the connection.
+
+Situations where it might be necessary..
+
+    1. It can enable you to reach more attack surface..
+
+    2. Some attacks might cause your connection to drop so you need to establish a new one.
+
+    3. Tokens or other data in the original handshake request might be stale and need updating.
+
+
+back to manipulating..
+
+    1. Send the message to repeater.
+    2. Click on pencil icon next to WebSocket URL.
+        - This opens a wizard that lets you attach to in existing WebSocket, clone a connected WebSocket, or reconnect to a disconnected WebSocket.
+
+    3. If you choose to clone a connected WebSocket or reconnect to a disconnected WebSocket, then the wizard will show full details of the Websocket handshake request, which you can edit as required before the handshake is preformed.
+
+    4. When you click on Connect, Burp will attempt to carry out the configured handshake an display the result....
+        - If a new WebSocket connection was successfully established, you can then use this to send new messages to burp repeater.
+
+
+> *Tips:
+
+1. User-supplied input transmitted to the server might be processed in unsafe ways, leading to vulnerabilities such as SQL injection or XML external entity injection.
+
+2. Some blind vulnerabilities reached via WebSockets might only be detectable using out-of-band (OAST) techniques.
+
+3. If attacker-controlled data is transmitted via WebSockets to other application users, then it might lead to XSS or other client-side vulnerabilities.
+
+
+
