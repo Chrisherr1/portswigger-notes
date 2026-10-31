@@ -1,41 +1,61 @@
-# Common Obstacles to exploiting path traversal vulnerabilities
+# Common obstacles to exploiting path traversal vulnerabilities
 
-> *Many Application that place user input into file paths implement defenses  against path traversal attacks can be bypassed.
+> Many applications that place user input into file paths implement defenses against path traversal attacks, but these can often be bypassed.
 
-> *Enable the images in the proxy history, some image parameters might not show if you dont..
+> **Tip:** Enable images in the proxy history. Some image parameters might not show if you don't.
 
-If an application strips or blocks directory traversal sequences from the user-supplied filename it might be able to be bypassed.
+If an application strips or blocks directory traversal sequences from the user-supplied filename, it might be possible to bypass it.
 
-> *If you cant use ../ to begin with
+---
 
-    1. Referencing the filesystem root.
-        - filename=/etc/passwd
-        - This will directly reference the file without using any traversal sequences. (Might work).
-        - Only work if the server/backend treats the parameter as being relative to a default working directory.
+## 1. Referencing the filesystem root
 
-> *If ../ are being removed by server
+*Use when you can't use `../` to begin with.*
 
-    2. Use Nested traversal sequences (....//) OR (....\/)
+```
+filename=/etc/passwd
+```
 
-        - These turn into normal traversal sequences when the inner sequence is stripped.
-       - ....// -> ../
-       - Reason being it usually removes instances of ../ so doubling them works.
+- This directly references the file without using any traversal sequences (might work).
+- Only works if the server/back end treats the parameter as being relative to a default working directory.
 
-> *if web servers are striping any directory traversal sequences before passing your input to the application.
+## 2. Nested traversal sequences
 
-    3. URL encoding your payload, DOUBLE ENCODING if needed.
+*Use when `../` is being removed by the server.*
 
-        - ../ -> %2e%2e%2f
-        - unorthodox encoding may work as well..
-            -..%c0%af or ..%ef%bc%8f
-    
-> * Burp suite offers a predefined payload list that will make it easier to try stuff.
-    - File name: Fuzzing - path traversal
+Use `....//` or `....\/`.
 
-> *If an application requires the user-supplied filename to start with the expected base folder, such as `/var/www/images`,`filename=/var/www/images/../../../etc/passwd` would be used.
+- These turn into normal traversal sequences when the inner sequence is stripped.
+- `....//` → `../`
+- This works because the server usually removes instances of `../`, so doubling them up leaves one behind.
 
-> * Sometimes an application may require the user-supplied filename to end with an expected file extension, such as .png.
-    In this case we can use a null byte to effectively terminate the file path before the required extension.
-    ```
-    filename=../../../etc/passwd%00.png
-    ```
+## 3. URL encoding
+
+*Use when web servers are stripping any directory traversal sequences before passing your input to the application.*
+
+URL-encode your payload, and double-encode it if needed.
+
+- `../` → `%2e%2e%2f`
+- Unorthodox encodings may work as well:
+  - `..%c0%af` or `..%ef%bc%8f`
+
+> **Tip:** Burp Suite offers a predefined payload list that makes it easier to try these.
+> - File name: **Fuzzing - path traversal**
+
+## 4. Validation of the start of the path
+
+If an application requires the user-supplied filename to start with the expected base folder, such as `/var/www/images`, you would use:
+
+```
+filename=/var/www/images/../../../etc/passwd
+```
+
+## 5. Validation of the file extension
+
+Sometimes an application may require the user-supplied filename to end with an expected file extension, such as `.png`.
+
+In this case, we can use a null byte to effectively terminate the file path before the required extension:
+
+```
+filename=../../../etc/passwd%00.png
+```
