@@ -6,3 +6,4 @@
 4. Validate that the content type is as expected for each request or response.
 5. Use generic error messages to avoid giving away information that may be useful for an attacker.
 6. Use protective measures on all versions of your API, not just the current production version.
+7. To prevent mass assignment vulnerabilities, allowlist the properties that can be updated by the user, and blocklist sensitive properties that shouldn't be updated by the user.

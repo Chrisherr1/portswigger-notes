@@ -30,10 +30,21 @@ API documentation is often publicly available, especially if the API is public-f
 ## What if there's no documentation?
 
 - You can make Burp crawl the API via **Burp Scanner**, or just browse the website and watch the endpoints pop up in the proxy history (you might miss some stuff, though).
-- If you find an endpoint like `/api/swagger/v1/users/12`, remember to try every directory in it (`/api`, `/api/swagger/v1/users/12`).
+- If you find an endpoint like `/api/swagger/v1/users/12`, remember to try every base path in it, since the documentation is often at one of them:
+  - `/api/swagger/v1`
+  - `/api/swagger`
+  - `/api`
 - You can use a list of common paths with Intruder to find documentation.
 
 > **Tip:** For heavyweight extraction, use the **JS Link Finder** BApp.
+
+### Using machine-readable documentation
+
+Documentation is often available in a machine-readable format, such as JSON or YAML (e.g., an OpenAPI spec).
+
+- **Burp Scanner** can crawl and audit OpenAPI documentation, or any other documentation in JSON or YAML format.
+- The **OpenAPI Parser** BApp can parse OpenAPI documentation.
+- Specialized tools like **Postman** or **SoapUI** can also be used to test the documented endpoints.
 
 ---
 
@@ -58,6 +69,26 @@ But sometimes changing the content type may enable you to:
 - Take advantage of differences in processing logic. For example, an API may be secure when handling JSON data but susceptible to injection attacks when dealing with XML.
 
 > **Tip:** You can use the **Content type converter** BApp to automatically convert data submitted within requests between XML and JSON.
+
+---
+
+## Using Intruder to find hidden endpoints
+
+Once you've identified some initial API endpoints, you can use Intruder to uncover hidden endpoints.
+
+For example, consider a scenario where you've identified the following API endpoint for updating user information:
+
+```http
+PUT /api/user/update
+```
+
+To identify hidden endpoints, use Burp Intruder to find other resources with the same structure. Add a payload position to the `/update` part of the path, with a list of other common functions, such as `delete` and `add`:
+
+```http
+PUT /api/user/§update§
+```
+
+> **Tip:** When looking for hidden endpoints, use wordlists based on common API naming conventions and industry terms. Make sure you also include terms that are relevant to the application, based on your initial recon.
 
 ---
 
