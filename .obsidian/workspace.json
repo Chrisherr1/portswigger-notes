@@ -11,10 +11,14 @@
             "id": "1ff2ad3c78824492",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "3.Bypassing rate limiting using aliases"
             }
           }
         ]
@@ -79,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "aebc933e9b757aee",
@@ -95,6 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -155,6 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -182,5 +190,19 @@
     }
   },
   "active": "1ff2ad3c78824492",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "GraphQl API vulnerabilities/5. Prevention.md",
+    "GraphQl API vulnerabilities/4. GraphWL CSRF.md",
+    "GraphQl API vulnerabilities/2.Bypassing Introspection defences.md",
+    "GraphQl API vulnerabilities/1.GraphQL.md",
+    "GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md",
+    "GraphQl API vulnerabilities/2. Bypassing Introspection defences.md",
+    "GraphQl API vulnerabilities/1.GraphQL Recon.md",
+    "GraphQl API vulnerabilities/Bypassing Introspection defences.md",
+    "GraphQl API vulnerabilities/GraphQL Recon.md",
+    "GraphQl API vulnerabilities/GraphQL Context.md",
+    "GraphQl API vulnerabilities/GraphQL Introduction.md",
+    "GraphQl API vulnerabilities",
+    "LLM Attacks"
+  ]
 }

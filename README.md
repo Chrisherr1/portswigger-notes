@@ -23,6 +23,7 @@ My personal study notes from the PortSwigger Web Security Academy, organized by 
 | WebSockets Vulnerabilities | DONE | 19 / 19 (29 Oct 2026) |
 | Path Traversal | DONE | 14 / 14 (31 Oct 2026) |
 | API Testing | DONE | 29 / 29 (31 Oct 2026) |
+| GraphQL API Vulnerabilities | DONE | 29 / 29 (02 Nov 2026) |
 
 > Some completed topics don't have notes for every section yet. I may revisit those later.
 
@@ -36,7 +37,6 @@ My personal study notes from the PortSwigger Web Security Academy, organized by 
 | File upload vulnerabilities | Practitioner | 21 / 35 |
 | Web LLM attacks | Practitioner | 1 / 30 |
 | Clickjacking (UI redressing) | Practitioner | 1 / 19 |
-| GraphQL API vulnerabilities | Practitioner | 1 / 29 |
 | NoSQL injection | Practitioner | 1 / 24 |
 | Cross-site request forgery (CSRF) | Practitioner | 0 / 46 |
 | Authentication vulnerabilities | Practitioner | 0 / 55 |
@@ -87,5 +87,13 @@ My personal study notes from the PortSwigger Web Security Academy, organized by 
 - [Introduction to Server-Side Parameter Pollution](<API testing/Server-Side Parameter Pollution/Introduction to Server-Side Parameter Pollution.md>)
 - [Testing for Server-Side Parameter Pollution](<API testing/Server-Side Parameter Pollution/Testing for server-side parameter pollution.md>)
 - [Preventing Server-Side Parameter Pollution](<API testing/Server-Side Parameter Pollution/Prevention.md>)
+
+### GraphQL API Vulnerabilities
+
+- [1) Finding GraphQL Endpoints](<GraphQl API vulnerabilities/1.GraphQL.md>)
+- [2) Bypassing Introspection Defenses](<GraphQl API vulnerabilities/2.Bypassing Introspection defences.md>)
+- [3) Bypassing Rate Limiting Using Aliases](<GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md>)
+- [4) GraphQL CSRF](<GraphQl API vulnerabilities/4. GraphWL CSRF.md>)
+- [5) Prevention](<GraphQl API vulnerabilities/5. Prevention.md>)
 
 ---
