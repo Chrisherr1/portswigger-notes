@@ -150,3 +150,53 @@ This way, you can attempt to brute-force every account without triggering the ac
 Account locking also fails to protect against credential stuffing attacks, which relies on using leaked username:passwords from other sites to test if they're the same for other sites.
 
 Account locking does not protect against credential stuffing because each username is only being attempted once
+
+## User rate limiting
+
+Developers will often block your IP for a short period if you send too many requests at a time.
+
+3 ways to unblock:
+
+1. Wait for the cooldown (slow and inefficient)
+
+2. Manually by an administrator (You'd have to have master skills to trick an admin)
+
+3. Manually by the user after successfully completing a CAPTCHA.
+
+
+User rate limiting is sometimes preferred to account locking due to being less prone to username enumeration and denial of service attacks.
+
+However...
+
+This even account locking is still not full proof.
+
+> A attacker can manipulate their apparent IP in order to bypass the block.
+
+As the limit is based on the rate of HTTP requests sent from the user's IP address, it is sometimes also possible to bypass this defense if you workout how to guess multiple passwords with a single request.
+
+
+# SIDE STEP : HTTP basic authentication
+
+Although fairly old, its relative simplicity and ease of implementation means you might sometimes see HTTP basic authentication being used.
+
+Process:
+
+Client receives an auth token from server (constructed by concatenating the username and password and encoding it in Base64.)
+
+This token is stored and managed by the browser, which automatically adds the
+`Authorization` header of every subsequent request as follows:
+
+```
+Authorization: Basic base64(username:password)
+```
+
+## Things wrong with this method:
+
+Firstly, it involves repeatedly sending the user's login credentials with every request. Unless the website also implements HSTS, user credentials are open to being captured in a man-in-the-middle attack.
+
+In addition, implementations of HTTP basic authentication often don't support brute-force protection. As the token consists exclusively of static values, this can leave it vulnerable to being brute-forced.
+
+HTTP basic authentication is also particularly vulnerable to session-related exploits, notably CSRF, against which it offers no protection on its own.
+
+In some cases, exploiting vulnerable HTTP basic authentication might only grant an attacker access to a seemingly uninteresting page. However, in addition to providing a further attack surface, the credentials exposed in this way might be reused in other, more confidential contexts.
+

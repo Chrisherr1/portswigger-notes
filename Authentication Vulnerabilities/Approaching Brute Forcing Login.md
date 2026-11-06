@@ -1,4 +1,4 @@
-# Approaching a Brute Forcing Target 
+# Approaching a Brute Forcing Login
 
 You want to learn how the login talks, finding the one thing that leaks, get the username, clear the wall and go for the password.
 
