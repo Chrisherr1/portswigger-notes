@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Authentication Vulnerabilities/Introduction.md",
+                "file": "Path Traversal/Intro to Path Traversal.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introduction"
+              "title": "Intro to Path Traversal"
             }
           }
         ]
@@ -190,11 +190,15 @@
   },
   "active": "1ff2ad3c78824492",
   "lastOpenFiles": [
+    "Web LLM Attacks/Prevention.md",
+    "Web LLM Attacks/3. AI Security Scanners.md",
+    "Web LLM Attacks/2. Training Data Poisoning.md",
+    "Web LLM Attacks/1. Introduction.md",
+    "Authentication Vulnerabilities/Introduction.md",
     "pos2-passwords.txt",
     "pos1-usernames.txt",
     "payloads.txt",
     "GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md",
-    "Authentication Vulnerabilities/Introduction.md",
     "Authentication Vulnerabilities",
     "GraphQl API vulnerabilities/5. Prevention.md",
     "GraphQl API vulnerabilities/4. GraphWL CSRF.md",

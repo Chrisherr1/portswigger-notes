@@ -23,3 +23,15 @@
 
 > it can usually be sometimes bypassed using a "ignore requests containing a payload" prompt. (often called jailbreaker prompts).
 
+# Defending against AI-powered scanner vulnerabilities
+
+1. Restrict scanner credentials and access controls.
+    - Give the scanner least privilege, only what it needs to do its job.
+2. Separate scanning identity from admin identity.
+    - Use dedicated testing accounts that dont have admin permissions.
+
+3, Apply server-side controls to the scanner.
+    - Always enforce access controls at application or API level, dont rely on the LLM to enforce them
+
+4. Treat all user-modifiable content as untrusted input.
+    -Assume any text from the database is unsafe and a place of injection.
