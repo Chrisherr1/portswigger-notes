@@ -24,6 +24,8 @@ My personal study notes from the PortSwigger Web Security Academy, organized by 
 | Path Traversal | DONE | 14 / 14 (31 Oct 2026) |
 | API Testing | DONE | 29 / 29 (31 Oct 2026) |
 | GraphQL API Vulnerabilities | DONE | 29 / 29 (02 Nov 2026) |
+| Authentication Vulnerabilities | DONE | 55 / 55 (06 Nov 2026) |
+| Web LLM Attacks | DONE | 30 / 30 (09 Nov 2026) |
 
 > Some completed topics don't have notes for every section yet. I may revisit those later.
 
@@ -35,11 +37,9 @@ My personal study notes from the PortSwigger Web Security Academy, organized by 
 | Cross-origin resource sharing (CORS) | Practitioner | 21 / 21 (01 Apr 2026) |
 | SQL injection | Practitioner | 36 / 51 |
 | File upload vulnerabilities | Practitioner | 21 / 35 |
-| Web LLM attacks | Practitioner | 1 / 30 |
 | Clickjacking (UI redressing) | Practitioner | 1 / 19 |
 | NoSQL injection | Practitioner | 1 / 24 |
 | Cross-site request forgery (CSRF) | Practitioner | 0 / 46 |
-| Authentication vulnerabilities | Practitioner | 0 / 55 |
 | Server-side request forgery (SSRF) | Practitioner | 0 / 23 |
 | Prototype pollution | Practitioner | 0 / 65 |
 | Race conditions | Practitioner | 0 / 29 |
@@ -95,5 +95,25 @@ My personal study notes from the PortSwigger Web Security Academy, organized by 
 - [3) Bypassing Rate Limiting Using Aliases](<GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md>)
 - [4) GraphQL CSRF](<GraphQl API vulnerabilities/4. GraphWL CSRF.md>)
 - [5) Prevention](<GraphQl API vulnerabilities/5. Prevention.md>)
+
+### Authentication Vulnerabilities
+
+- [Introduction](<Authentication Vulnerabilities/Introduction.md>)
+- [Approaching a Brute Forcing Login](<Authentication Vulnerabilities/Approaching Brute Forcing Login.md>)
+- [Vulnerabilities in Multi-Factor Authentication](<Authentication Vulnerabilities/Brute Forcing Multi-factor Authentication.md>)
+- [Preventing Auth Attacks](<Authentication Vulnerabilities/Preventing Auth Attacks.md>)
+
+**Wordlists / helpers** (repo root, used for the brute-force labs)
+
+- [payloads.txt](<payloads.txt>) — shell one-liners for generating alternating username lists
+- [pos1-usernames.txt](<pos1-usernames.txt>) — username position list
+- [pos2-passwords.txt](<pos2-passwords.txt>) — password position list
+
+### Web LLM Attacks
+
+- [1) Introduction](<Web LLM Attacks/1. Introduction.md>)
+- [2) Training Data Poisoning](<Web LLM Attacks/2. Training Data Poisoning.md>)
+- [3) AI-Powered Security Scanners](<Web LLM Attacks/3. AI Security Scanners.md>)
+- [Prevention](<Web LLM Attacks/Prevention.md>)
 
 ---
