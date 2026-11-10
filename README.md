@@ -46,6 +46,39 @@ My personal study notes from the PortSwigger Web Security Academy, organized by 
 
 ---
 
+## Roadmap
+
+PortSwigger has two formats: **learning paths** (guided, with a progress counter) and **topics** (article pages with labs, no path counter). Some vulnerability classes only exist as topics. This roadmap uses both.
+
+### Phase 1 — Recon & attack surface (before exploitation)
+
+Learn what the app exposes, who can do what, and how its workflows run.
+
+| # | Section | Format | Status |
+|---|---|---|---|
+| — | API Testing | Learning path | DONE |
+| — | GraphQL API Vulnerabilities | Learning path | DONE |
+| — | Authentication Vulnerabilities | Learning path | DONE |
+| — | Web LLM Attacks | Learning path | DONE |
+| 1 | Information disclosure | Topic (~5 labs) | ⏭️ Next |
+| 2 | Essential skills | Topic | Not started |
+| 3 | Access control | Topic (~13 labs) | Not started |
+| 4 | Business logic vulnerabilities | Topic (~11 labs) | Not started |
+| opt | JWT / OAuth | Topic | Optional (could wait for Phase 2) |
+
+> Lab counts are approximate. Check each topic page.
+
+### Phase 2 — Exploitation
+
+Start with the paths that are closest to done, then work through the rest.
+
+1. SQL injection (36 / 51)
+2. File upload vulnerabilities (21 / 35)
+3. Web Cache Deception (23 / 36)
+4. Remaining: SSRF, CSRF, NoSQL injection, Clickjacking, Race conditions, Prototype pollution
+
+---
+
 ## Contents
 
 ### Web Cache Deception
