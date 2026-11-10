@@ -60,7 +60,7 @@ Learn what the app exposes, who can do what, and how its workflows run.
 | — | GraphQL API Vulnerabilities | Learning path | DONE |
 | — | Authentication Vulnerabilities | Learning path | DONE |
 | — | Web LLM Attacks | Learning path | DONE |
-| 1 | Information disclosure | Topic (~5 labs) | ⏭️ Next |
+| 1 | Information disclosure | Topic (~5 labs) | 🚧 In progress |
 | 2 | Essential skills | Topic | Not started |
 | 3 | Access control | Topic (~13 labs) | Not started |
 | 4 | Business logic vulnerabilities | Topic (~11 labs) | Not started |
@@ -85,68 +85,66 @@ Start with the paths that are closest to done, then work through the rest.
 
 **Concepts**
 
-- [1) What are Web Caches?](<Web Cache Deception/1) What are Web Caches?.md>)
-- [2) Constructing an Attack](<Web Cache Deception/2) Constructing an Attack.md>)
-- [4) What are Delimiter Discrepancies](<Web Cache Deception/4) What are Delimiter Discrepancies.md>)
-- [7) What are Delimiter Decoding Discrepancies?](<Web Cache Deception/7) What are Delimiter decoding Discrepancies?.md>)
-- [8) Exploiting Static Cache Rules](<Web Cache Deception/8) Exploiting static cache rules.md>)
-- [9) What are Normalization Discrepancies?](<Web Cache Deception/9) What are Normalization Descrepancies?.md>)
+- [1) What are Web Caches?](<Exploits/Web Cache Deception/1) What are Web Caches?.md>)
+- [2) Constructing an Attack](<Exploits/Web Cache Deception/2) Constructing an Attack.md>)
+- [4) What are Delimiter Discrepancies](<Exploits/Web Cache Deception/4) What are Delimiter Discrepancies.md>)
+- [7) What are Delimiter Decoding Discrepancies?](<Exploits/Web Cache Deception/7) What are Delimiter decoding Discrepancies?.md>)
+- [8) Exploiting Static Cache Rules](<Exploits/Web Cache Deception/8) Exploiting static cache rules.md>)
+- [9) What are Normalization Discrepancies?](<Exploits/Web Cache Deception/9) What are Normalization Descrepancies?.md>)
 - 10) Exploiting Normalization by the Origin Server — 🚧 not yet written
 
 
 
 ### WebSockets Vulnerabilities
 
-- [Intro To Web Sockets](<WebSocketsVulnerabilities/Intro To Web Sockets.md>)
-- [Understanding Exploitation](<WebSocketsVulnerabilities/Understanding Exploititation.md>)
-- [Securing a WebSocket](<WebSocketsVulnerabilities/Securing a WebSocket.md>)
+- [Intro To Web Sockets](<Exploits/WebSocketsVulnerabilities/Intro To Web Sockets.md>)
+- [Understanding Exploitation](<Exploits/WebSocketsVulnerabilities/Understanding Exploititation.md>)
+- [Securing a WebSocket](<Exploits/WebSocketsVulnerabilities/Securing a WebSocket.md>)
 
 ### Path Traversal
 
-- [Intro to Path Traversal](<Path Traversal/Intro to Path Traversal.md>)
-- [Common Obstacles](<Path Traversal/Things in your way.md>)
-- [Prevention](<Path Traversal/Prevention.md>)
+- [Intro to Path Traversal](<Exploits/Path Traversal/Intro to Path Traversal.md>)
+- [Common Obstacles](<Exploits/Path Traversal/Things in your way.md>)
+- [Prevention](<Exploits/Path Traversal/Prevention.md>)
 
 ### API Testing
 
 **API Recon**
 
-- [Introduction](<API testing/API Recon/Introduction.md>)
-- [Mass Assignment Vulnerabilities](<API testing/API Recon/Mass assignment Vulns.md>)
-- [Preventing Vulnerabilities in APIs](<API testing/API Recon/Preventing Vulnerabilities in APIs.md>)
+- [Introduction](<Recon/API testing/API Recon/Introduction.md>)
+- [Mass Assignment Vulnerabilities](<Recon/API testing/API Recon/Mass assignment Vulns.md>)
+- [Preventing Vulnerabilities in APIs](<Recon/API testing/API Recon/Preventing Vulnerabilities in APIs.md>)
 
 **Server-Side Parameter Pollution**
 
-- [Introduction to Server-Side Parameter Pollution](<API testing/Server-Side Parameter Pollution/Introduction to Server-Side Parameter Pollution.md>)
-- [Testing for Server-Side Parameter Pollution](<API testing/Server-Side Parameter Pollution/Testing for server-side parameter pollution.md>)
-- [Preventing Server-Side Parameter Pollution](<API testing/Server-Side Parameter Pollution/Prevention.md>)
+- [Introduction to Server-Side Parameter Pollution](<Recon/API testing/Server-Side Parameter Pollution/Introduction to Server-Side Parameter Pollution.md>)
+- [Testing for Server-Side Parameter Pollution](<Recon/API testing/Server-Side Parameter Pollution/Testing for server-side parameter pollution.md>)
+- [Preventing Server-Side Parameter Pollution](<Recon/API testing/Server-Side Parameter Pollution/Prevention.md>)
 
 ### GraphQL API Vulnerabilities
 
-- [1) Finding GraphQL Endpoints](<GraphQl API vulnerabilities/1.GraphQL.md>)
-- [2) Bypassing Introspection Defenses](<GraphQl API vulnerabilities/2.Bypassing Introspection defences.md>)
-- [3) Bypassing Rate Limiting Using Aliases](<GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md>)
-- [4) GraphQL CSRF](<GraphQl API vulnerabilities/4. GraphWL CSRF.md>)
-- [5) Prevention](<GraphQl API vulnerabilities/5. Prevention.md>)
+- [1) Finding GraphQL Endpoints](<Recon/GraphQl API vulnerabilities/1.GraphQL.md>)
+- [2) Bypassing Introspection Defenses](<Recon/GraphQl API vulnerabilities/2.Bypassing Introspection defences.md>)
+- [3) Bypassing Rate Limiting Using Aliases](<Recon/GraphQl API vulnerabilities/3.Bypassing rate limiting using aliases.md>)
+- [4) GraphQL CSRF](<Recon/GraphQl API vulnerabilities/4. GraphWL CSRF.md>)
+- [5) Prevention](<Recon/GraphQl API vulnerabilities/5. Prevention.md>)
 
 ### Authentication Vulnerabilities
 
-- [Introduction](<Authentication Vulnerabilities/Introduction.md>)
-- [Approaching a Brute Forcing Login](<Authentication Vulnerabilities/Approaching Brute Forcing Login.md>)
-- [Vulnerabilities in Multi-Factor Authentication](<Authentication Vulnerabilities/Brute Forcing Multi-factor Authentication.md>)
-- [Preventing Auth Attacks](<Authentication Vulnerabilities/Preventing Auth Attacks.md>)
-
-**Wordlists / helpers** (repo root, used for the brute-force labs)
-
-- [payloads.txt](<payloads.txt>) — shell one-liners for generating alternating username lists
-- [pos1-usernames.txt](<pos1-usernames.txt>) — username position list
-- [pos2-passwords.txt](<pos2-passwords.txt>) — password position list
+- [Introduction](<Recon/Authentication Vulnerabilities/Introduction.md>)
+- [Approaching a Brute Forcing Login](<Recon/Authentication Vulnerabilities/Approaching Brute Forcing Login.md>)
+- [Vulnerabilities in Multi-Factor Authentication](<Recon/Authentication Vulnerabilities/Brute Forcing Multi-factor Authentication.md>)
+- [Preventing Auth Attacks](<Recon/Authentication Vulnerabilities/Preventing Auth Attacks.md>)
 
 ### Web LLM Attacks
 
-- [1) Introduction](<Web LLM Attacks/1. Introduction.md>)
-- [2) Training Data Poisoning](<Web LLM Attacks/2. Training Data Poisoning.md>)
-- [3) AI-Powered Security Scanners](<Web LLM Attacks/3. AI Security Scanners.md>)
-- [Prevention](<Web LLM Attacks/Prevention.md>)
+- [1) Introduction](<Recon/Web LLM Attacks/1. Introduction.md>)
+- [2) Training Data Poisoning](<Recon/Web LLM Attacks/2. Training Data Poisoning.md>)
+- [3) AI-Powered Security Scanners](<Recon/Web LLM Attacks/3. AI Security Scanners.md>)
+- [Prevention](<Recon/Web LLM Attacks/Prevention.md>)
+
+### Smaller Topics
+
+- [Information Disclosure](<Smaller Topics/Information Disclosure.md>)
 
 ---
