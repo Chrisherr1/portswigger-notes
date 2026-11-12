@@ -151,7 +151,7 @@ In this case, you might be able to acess it by simply browsing to /.git
 
 > This will not give you access to full source code, but comparing the diff will allow you to read snippets of code. And some sensitive data might be in some of the lines changed.
 
-## Prevention 
+## Prevention
 
 > This can be very tricky due to the variet of ways it can occur.
 
