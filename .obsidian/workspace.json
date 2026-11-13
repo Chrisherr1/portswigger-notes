@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Smaller Topics/Information Disclosure.md",
+                "file": "Essential Skills.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Information Disclosure"
+              "title": "Essential Skills"
             }
           }
         ]
@@ -188,13 +188,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "1ff2ad3c78824492",
+  "active": "3cbf224e9944993e",
   "lastOpenFiles": [
+    "Exploits/Web Cache Deception/Prevention.md",
+    "Smaller Topics/Information Disclosure.md",
     "Recon/API testing/Server-Side Parameter Pollution/Testing for server-side parameter pollution.md",
     "Recon/API testing/Server-Side Parameter Pollution/Introduction to Server-Side Parameter Pollution.md",
     "Recon/GraphQl API vulnerabilities/1.GraphQL.md",
     "Recon/GraphQl API vulnerabilities/2.Bypassing Introspection defences.md",
-    "Smaller Topics/Information Disclosure.md",
     "Smaller Topics",
     "Exploits/WebSocketsVulnerabilities/WebSockets.png",
     "Exploits/WebSocketsVulnerabilities/Understanding Exploititation.md",
@@ -223,7 +224,6 @@
     "Path Traversal/Intro to Path Traversal.md",
     "Path Traversal",
     "WebSocketsVulnerabilities/WebSockets.png",
-    "WebSocketsVulnerabilities/Understanding Exploititation.md",
     "WebSocketsVulnerabilities",
     "Web Cache Deception/delimiter-wordlist.txt",
     "Web Cache Deception",

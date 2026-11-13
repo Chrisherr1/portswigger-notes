@@ -147,4 +147,109 @@ Eg:
 
 ## Obfuscation via unicode escaping
 
+Unicode escape sequences consist of prefix `\u` followed by the four-digit hex code for the character.
+
+Eg: \u003a -> ;
+
+> ES6 also supports a new form of unicode escape using curly braces
+
+Eg: \u{3a} -> ;
+
+Most programming lanaguages will decode unicode escapes.
+
+When injecting into string context you can obfuscate client-side payloads using unicode.(Meaning trying to inject code into front-end javascript not calling the database)
+
+Eg: DOM XSS
+
+Lets say that your input is passed to a `eval()` sink as a string.
+
+If your attempts are blocked,try escaping one of the characters 
+
+```
+eval("\u0061lert(1)")
+```
+
+As this will remain encoded server-side, it may go undetected until the browser decides to decode it again.
+
+
+> Inside a string, you can escape any characters like this...
+
+> However outside of a string, escaping some character can result in a syntax error.
+
+> This includes opening and closing parentheses.
+
+ES6-style unicode escapes also allow optional leading zeros, so some WAFs may be eaily fooled using the same techinqiues used for HTML encoding...
+
+eg: `<a href="javascript:\u{00000000061}alert(1)">Click me</a>`
+
+## Obfuscation via hex escaping
+
+Another option when injecting into a string context is to use hex escapes, which represent characters using their hexadecimal code point, prefixed with `\x`
+
+eg: `\x61`
+
+> You can sometimes obfuscate SQL statements in a similar manner using the prefix `0x`.
+
+eg: 0x53454c454354 -> SELECT
+
+    ```
+    (0xSELECT)
+    ```
+
+## Obfuscation via octal escaping
+
+Another option when injecting into a string content is to use octal escaping. Difference is octal uses base-8 vs base-16 of hex.
+
+They are prefixes with `\141`
+
+eg: `eval("\141lert(1)")` -> `eval("alert(1)")`
+
+## Obfuscation via multiple encodings
+
+It's important to know that you can combine encodings to hide your payloads behind MULTIPLE LAYERS of obfuscation.
+
+eg: `<a href="javascript:&bsol;u0061lert(1)">Click me</a>`
+
+HTML decodes `&bsol;,` results to -> \
+
+This turns the u0061 into the unicode escape `\u0061`.
+
+This then decoded further to form a functioning XSS payload.
+
+```
+<a href="javascript:alert(1)">Click me</a>
+
+```
+This is just one example where you can use multiple encodings to get past filters.
+
+> YOU REQUIRE A SOLID UNDERSTANDING OF WHICH DECODING IS PREFORMED ON YOUR INPUT AND IN WHAT ORDER.
+
+
+## Obfuscation via the SQL CHAR() function
+
+This is specific to SQL injection.
+
+You may be able to obfuscate your SQLi using `CHAR()` function.
+
+> It accepts a single decimal or hex code point and returns the matching character.
+
+Hex code must be prefixed with : `0x`
+
+eg: CHAR(83) -> CHAR(0x53)
+
+> They both give S.
+
+You can obfuscate blocked keywords like this to get past the filter.
+
+EG: BLOCKED! SELECT is blacklisted...
+```
+CHAR(83)+CHAR(69)+CHAR(76)+CHAR(69)+CHAR(67)+CHAR(84)
+```
+> This would translate to `SELECT`
+
+
+Note: Scanner can be used to find this stuff easier and you should be using burp scanner to automate this. So that you can get to the important stuff.
+
+
+
 
